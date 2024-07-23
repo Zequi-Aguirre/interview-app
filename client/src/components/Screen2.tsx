@@ -5,7 +5,8 @@ const Screen2 = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('/api/screen2')
+    console.log('Screen2 mounted');
+    axios.get('http://localhost:8000/api/screen2')
       .then(response => setMessage(response.data.message));
   }, []);
 

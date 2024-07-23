@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Screen3 = () => {
+const Screen1 = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('/api/screen3')
+    console.log('Screen1 mounted');
+    axios.get('http://localhost:8000/api/screen1')
       .then(response => setMessage(response.data.message));
   }, []);
 
   return <div>{message}</div>;
 };
 
-export default Screen3;
+export default Screen1;
